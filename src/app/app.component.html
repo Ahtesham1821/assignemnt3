@@ -1,0 +1,72 @@
+<p>
+  <mat-toolbar color="primary">
+   <img src="../assets/diagnosis.png" width="50px">
+    <span>Employee Data Record</span>
+    <span class="example-spacer"></span>
+    <button mat-flat-button color="accent" (click)="AddData()">Add Employee Data</button>
+
+  </mat-toolbar>
+</p>
+
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+   <ng-container matColumnDef="updateId">
+
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+    
+          <td mat-cell *matCellDef="let data"> {{data.updateId}} </td>
+    
+        </ng-container>
+ <ng-container matColumnDef="employeeId">
+    <th mat-header-cell *matHeaderCellDef>EmployeeId</th>
+    <td mat-cell *matCellDef="let data"> {{data.employeeId}}</td>
+  </ng-container> 
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="employeeName">
+    <th mat-header-cell *matHeaderCellDef> EmployeeName </th>
+    <td mat-cell *matCellDef="let data "> {{data.employeeName}} </td>
+  </ng-container> 
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="designation">
+    <th mat-header-cell *matHeaderCellDef> Designation</th>
+    <td mat-cell *matCellDef="let data "> {{data.designation}} </td>
+  </ng-container> 
+
+  <!-- Symbol Column -->
+   <ng-container matColumnDef='dateOfJoinning'>
+    <th mat-header-cell *matHeaderCellDef> DateofJoining </th>
+    <td mat-cell *matCellDef="let data "> {{data.dateOfJoinning | date}} </td>
+    
+  </ng-container>
+  
+  
+  <ng-container matColumnDef="Action">
+    <th mat-header-cell *matHeaderCellDef> Action</th>
+    <div class="example-label">mat-icon</div>
+     <td mat-cell *matCellDef="let data "> <div class="example-button-container">
+      <button mat-icon-button color="warn" aria-label="Example icon button with a delete icon" (click)="DeleteData(data.updateId)" >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" aria-label="Example icon button with a delete icon" (click)="UpdateData(data.updateId)">
+        <mat-icon>edit</mat-icon>
+      </button>
+ 
+      <button mat-icon-button color="primary" aria-label="Example icon button with a delete icon" (click)="getPaySlip(data.updateId)">
+        <mat-icon>notebook</mat-icon>
+      </button>
+
+    </div>    </td>
+    </ng-container>
+  
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"> </tr>
+ 
+</table> 
+<router-outlet></router-outlet>

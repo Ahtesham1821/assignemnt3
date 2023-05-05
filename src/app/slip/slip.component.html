@@ -1,0 +1,91 @@
+<div class="container">
+
+
+
+
+      <table border="2px">
+    
+     
+    
+        <tr><th colspan="4">Company Name : {{user.companyName}}</th></tr>
+    
+        <tr><th colspan="4">Comapny Address : {{user.companyAddress}}</th></tr>
+    
+         <tr><th colspan="4">Date Of Joining : {{user.dateOfJoinning | date}}</th></tr> 
+    
+     
+    
+     
+    
+        <tr>
+    
+          <td>NAME : {{user.employeeName}}</td>
+    
+          <td>UAN : {{user.uan}} </td>
+    
+        </tr>
+    
+     
+    
+       
+    
+        <tr>
+    
+          <td>EmployeeId : {{user.employeeId}} </td>
+    
+          <td>PF No :{{user.pfno}} </td>
+    
+        </tr>
+    
+    
+    
+    
+        <tr>
+    
+          <td>Designation :{{user.designation}} </td>
+    
+          <td>ESI No : {{user.esiNo}} </td>
+    
+    
+    
+    
+        </tr>
+    
+     
+    
+        <tr>
+    
+          <td>Department :{{user.departmentName}} </td>
+    
+          <td>Bank Name :{{user.bankName}} </td>
+    
+        </tr>
+    
+     
+    
+        <tr>
+    
+          <td>DOJ : {{user.dateOfJoinning | date}} </td>
+    
+          <td>Bank A/C No : {{user.bankAcNo}} </td>
+    
+        </tr>
+    
+     
+    
+        <tr><th colspan="">Basic: Rs{{user.basic}}  HRA : Rs{{user.hra}}</th>
+          <th colspan="">Total Earning : {{user.totalEarning}} Rs</th></tr>
+    
+        <tr><th colspan="">EPF: Rs{{user.epf}} ESI/HealthInsurence : Rs{{user.esi}}</th>
+          <th colspan="4">Total Deduction : {{user.totalDeduction}} Rs</th></tr>
+    
+        <tr><th colspan="">Net Salary :</th>
+          <th colspan="4"> Rs {{user.netSalary}}</th></tr>
+    
+     
+    
+      </table>
+      <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+
+    
+    </div>
